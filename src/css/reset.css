@@ -1,0 +1,6 @@
+/* ^^ Serve Para Dar Espaçamento Entre as Caixas e Organizar.*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

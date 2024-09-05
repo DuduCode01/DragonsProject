@@ -1,0 +1,114 @@
+/* Aqui esta basicamente dizendo que é para aplicar a fonte "Poppins" para todos os elementos no Body. e se não carregar a fonte "Poppins" vai carregar a fonte aleatória "sans-serif". */
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* Aqui é ótimo para visualizar bem onde você esta mexendo no code (OBS: Tinha um background-color para visualizar, mas somente DURANTE enquanto o site esta sendo feito. ;)*/
+  max-width: 1280px; /* Aqui esta dando uma largura Máxima para as imagens/site por inteiro */
+  margin: 0 auto; /* aqui vai dar uma margem equivalente para todos os lados e acaba centralizando. */
+}
+
+.carrosel {
+  position: fixed; /* Fixamento das imagens na propriedade "carrosel" que é das imagens, para tirar o "Scroll" da página. */
+  top: 0;
+  left: 0; /* Servem para posicionar a classe "carrosel" que são as imagens, posicionando-as sempre na esquerda e em cima. */
+  width: 100%; /* Serve para a classe "carrosel" ocupar 100% da tela. */
+  z-index: -1; /*  "Z" significa eixo de profundidade. Aqui esta dizendo para pegar a classe "carrosel" e jogar atrás das propriedades, que no caso é deixar as imagens de fundo. (Isso é muito massa vei IRADOOO KKKK) */
+}
+
+.informations {
+  display: none; /* Serve para esconder tudo que esta na classe de "informations" que no caso são as descrições dos dragões. */
+}
+
+.active.informations {
+  display: block; /* Aqui estamos pedindo para aparecer somente a imagem que demos a classe "ActiveInformations", que é a imagem principal. */
+}
+
+.content {
+  /* Vamos centralizar a parte do conteúdo dos dragões aqui¨*/
+  display: flex; /* Isso vai tornar o posicionamento do elemento mais fácil */
+  flex-direction: column; /* Direcionamento do conteudo para colunas. */
+  justify-content: space-evenly; /* justificar o conteúdo e espaçar da mesma forma. Mas para funcionar é necessário dar o espaço que precisamos e vai ser feito a seguir. */
+  min-height: 100vh; /* "ViewPortHeight" Tipo de Medida para dar altura */
+}
+/* O espaço ao invés de um ponto, é um "Seletor descendente". Vai aplicar as regras no H1 dentro da Div com a classe "Informations". */
+.informations h1 {
+  font-size: 35px;
+  color: #ffffff;
+  margin-bottom: 80px; /* Margem a baixo. no caso separa o texto do Titulo. */
+  font-family: "GOT";
+  letter-spacing: 8px;
+}
+
+@font-face {
+  font-family: "GOT";
+  src: url(../fontes/GOT.ttf); /* é necessário voltar as pastas usando "../" no CSS */
+}
+
+.informations .description {
+  width: 49%; /* Vai dimiuir o tamanho da largura da descrição */
+  font-size: 24px;
+  color: #ffffff;
+  line-height: 40px; /* È o espaçamento das linhas da descrição */
+  height: 300px;
+  overflow: auto; /* Se decidir criar mais textos ele ira criar um "Scroll" automaticamente */
+  padding-right: 15px;
+}
+
+.buttons-carrosel {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaçamento de 20px para todos os elementos */
+}
+
+.buttons-carrosel .botao {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  border-color: #ffffff;
+}
+
+.buttons-carrosel .botao.selecionado {
+  background-color: #1d8346;
+}
+
+.imagem {
+  width: 100vw; /* View Port Width Serve para ocupar 100% da largura da tela, mesma coisa com o "He"ight"*/
+  height: 100vh;
+  object-fit: cover; /* A imagem irá se adequar ao tamanho certo */
+  display: none;
+}
+
+.imagem.ativa {
+  display: block;
+  animation: mudarImagem 0.7s;
+}
+
+@keyframes mudarImagem {
+  /* São utilizados para definir uma série de passos para criar uma animação */
+  from {
+    opacity: 0.85;
+  }
+
+  to {
+    opacity: 1; /* Quando trocar a imagem a opacidade vai ir de 0.85 para 1 */
+  }
+}
+
+main:after {
+  /* Depois do Main irá criar um pseudoelemento */
+  content: "";
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0.05926120448179273) 50%,
+    rgba(0, 0, 0, 1) 90%
+  );
+  z-index: -1;
+}

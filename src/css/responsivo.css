@@ -1,0 +1,40 @@
+@media (max-width: 1280px) {
+  /* Tudo que estiver dentro deste bloco, vai ser aplicado estilos assim que a tela chegar a largura de resolução "1280px" ou menos */
+  body {
+    padding: 0 40px; /* Espaçamento nas letras do body nas resoluçoes abaixo de "1280px" */
+    background: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 0.05926120448179273) 50%,
+      rgba(0, 0, 0, 1) 90%
+    );
+  }
+}
+
+@media (max-width: 768px) {
+  .active.informations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .informations .description {
+    width: 60%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    padding: 40px;
+  }
+
+  .informations .description {
+    width: 100%;
+  }
+
+  .content {
+    min-height: 70vh;
+    gap: 50px;
+  }
+}
